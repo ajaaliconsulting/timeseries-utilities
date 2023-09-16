@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "timeseries-utilities"
+version = "0.1.0"
+description = "Timeseries utilities written in Cython"
+authors = ["ahmedali <ahmed@ajaali.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "timeseries_utilities"}]
+include = [{ path = "timeseries_utilities/**/*.so", format = "wheel" }]
+homepage='https://github.com/ajaaliconsulting/timeseries-utilities'
+repository='https://github.com/ajaaliconsulting/timeseries-utilities'
+classifiers=[
+    'Development Status :: 5 - Production/Stable',
+    'Intended Audience :: Developers',
+    'License :: OSI Approved :: MIT License',
+    "Operating System :: OS Independent",
+    'Programming Language :: Cython',
+    'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Software Development :: Libraries",
+]
+
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.2"
+
+[build-system]
+requires = ["poetry-core", "cython~=3.0.2"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.build]
+generate-setup-file = false
+script = "build.py"
